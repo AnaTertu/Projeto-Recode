@@ -9,3 +9,8 @@ CREATE TABLE fullstackeletro.peoples(
     phones VARCHAR(20) NOT NULL,
     posts VARCHAR(200)
 );
+
+INSERT INTO people (id, names, phones, posts) VALUES(default,'Ana Tertuliano', '551198459845', "Olá, mundo!");
+INSERT INTO people (id, names, phones, posts) VALUES(default,'Elnatan', '5511952935270', 'Ótimos produtos.');
+INSERT INTO people (id, names, phones, posts) VALUES(default,'Thamirez', '5511958011441', 'Parabéns pela loja');
+INSERT INTO people (id, names, phones, posts) VALUES(default, 'Diego', '5511998369001', 'Chegamos aqui');

@@ -16,5 +16,13 @@ class People
         $stmt = $connection->query("SELECT * FROM peoples");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public static function getTotalPeoples()
+    {
+        $connection = Connection::getDb();
+
+        $stmt = $connection->query("SELECT count(*) as total_peoples from peoples");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
   

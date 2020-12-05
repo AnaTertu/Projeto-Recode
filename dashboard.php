@@ -1,8 +1,10 @@
 <?php
-    require "./Models/People.php";
-    $peoples = People::getAll();
+    require "Models/People.php";
+    $total = People::getTotalPeoples();
 ?>
-
+<!--acima eu executo a class apartir dela mesma
+    $people = new People;
+    $total = $people->getTotalPeoples();  -->
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -17,7 +19,7 @@
        
         <main class="py-2" style="min-height: 90vh; height: auto; background-color: #ccc ">
             
-            <div class="card d-flex align-items-center justyfy" style="width: 350px; height: 80vh; margin: 5vh auto">
+            <div class="card d-flex align-items-center justify-content-center" style="width: 350px; height: 80vh; margin: 5vh auto">
                 
                 <canvas id="myChart" width="300" height="300"></canvas>
 
@@ -25,16 +27,19 @@
 
         </main> 
         
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+        
         <script>
+
             var ctx = document.getElementById('myChart').getContext('2d');
+
             var myChart = new Chart(ctx, {
-                type: 'polarArea',
+                type: 'pie',
                 data: {
                     labels: ['Clientes', 'Geladeiras', 'Fogões', 'Microondas', 'Lava-roupa', 'Lava-Louças'],
                 datasets: [{
                     label: '# of Votes',
-                    data: [10, 3, 2, 3, 2, 2],
+                    data: [<?= $total[0]["total_peoples"] ?>, 3, 2, 3, 2, 2],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
