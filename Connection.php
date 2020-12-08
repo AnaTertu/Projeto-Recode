@@ -12,7 +12,7 @@
             if ($conn) {
                 return $conn;
             } else {
-                return "<h1> Erro ao realizar conexão </h1>";
+                echo "<h1> Erro ao realizar conexão </h1>";
             }        
         }
     }
