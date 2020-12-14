@@ -1,8 +1,13 @@
 <?php
     require "./Models/People.php";
+
+    header("Access-Control-Allow-Origin:*");  // Permite que outras aplicações acessem a api
+    header("Content-type: application/json";)  //Indicação de arquivos Json
     
     $peoples = People::getAll();
 ?>
+
+echo json_encode($people);
 
 <!DOCTYPE html>
 <html lang="pt-br">
